@@ -198,18 +198,6 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-<<<<<<< Updated upstream
-    m_Name: Enable Debug Button 1
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: left ctrl
-    altNegativeButton: 
-    altPositiveButton: joystick button 8
-    gravity: 0
-    dead: 0
-    sensitivity: 0
-=======
     m_Name: Horizontal
     descriptiveName: 
     descriptiveNegativeName: 
@@ -220,25 +208,12 @@ InputManager:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
->>>>>>> Stashed changes
     snap: 0
     invert: 0
     type: 0
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-<<<<<<< Updated upstream
-    m_Name: Enable Debug Button 2
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: backspace
-    altNegativeButton: 
-    altPositiveButton: joystick button 9
-    gravity: 0
-    dead: 0
-    sensitivity: 0
-=======
     m_Name: Vertical
     descriptiveName: 
     descriptiveNegativeName: 
@@ -249,14 +224,76 @@ InputManager:
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
->>>>>>> Stashed changes
     snap: 0
     invert: 0
     type: 0
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-<<<<<<< Updated upstream
+    m_Name: Fire_P1
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: right shift
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Fire_P2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: left shift
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Enable Debug Button 1
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: left ctrl
+    altNegativeButton: 
+    altPositiveButton: joystick button 8
+    gravity: 0
+    dead: 0
+    sensitivity: 0
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Enable Debug Button 2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: backspace
+    altNegativeButton: 
+    altPositiveButton: joystick button 9
+    gravity: 0
+    dead: 0
+    sensitivity: 0
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
     m_Name: Debug Reset
     descriptiveName: 
     descriptiveNegativeName: 
@@ -322,42 +359,27 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Debug Persistent
-=======
-    m_Name: Fire_P1
->>>>>>> Stashed changes
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: right shift
     altNegativeButton: 
-<<<<<<< Updated upstream
     altPositiveButton: joystick button 2
     gravity: 0
     dead: 0
     sensitivity: 0
-=======
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
->>>>>>> Stashed changes
     snap: 0
     invert: 0
     type: 0
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-<<<<<<< Updated upstream
     m_Name: Debug Multiplier
-=======
-    m_Name: Fire_P2
->>>>>>> Stashed changes
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: left shift
     altNegativeButton: 
-<<<<<<< Updated upstream
     altPositiveButton: joystick button 3
     gravity: 0
     dead: 0
@@ -374,8 +396,6 @@ InputManager:
     negativeButton: left
     positiveButton: right
     altNegativeButton: 
-=======
->>>>>>> Stashed changes
     altPositiveButton: 
     gravity: 1000
     dead: 0.001
@@ -385,7 +405,6 @@ InputManager:
     type: 0
     axis: 0
     joyNum: 0
-<<<<<<< Updated upstream
   - serializedVersion: 3
     m_Name: Debug Vertical
     descriptiveName: 
@@ -434,6 +453,4 @@ InputManager:
     type: 2
     axis: 5
     joyNum: 0
-=======
->>>>>>> Stashed changes
   m_UsePhysicalKeys: 1

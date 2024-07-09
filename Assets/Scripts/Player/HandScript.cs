@@ -8,7 +8,7 @@ public class HandScript : MonoBehaviour
   [SerializeField] private string m_ShootInput;
   [SerializeField] private float projectileSpeed;
 
-  public int rockNumber = 0;
+  [HideInInspector] public int rockNumber = 0;
   
   public void ThrowProjectile() {
     if (rockNumber > 0)
