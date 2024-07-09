@@ -1,0 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class HandScript : MonoBehaviour
+{
+  [SerializeField] private GameObject projectile;
+  [SerializeField] private string m_ShootInput;
+  [SerializeField] private float projectileSpeed;
+
+  public int rockNumber = 0;
+  
+  public void ThrowProjectile() {
+    if (rockNumber > 0)
+    {
+      GameObject m_projectile = Instantiate(projectile, transform.position, transform.rotation);
+      Vector3 projectileVelocity = new Vector3(0, 0, projectileSpeed);
+      m_projectile.GetComponent<Rigidbody>().velocity = transform.rotation * projectileVelocity;
+      m_projectile.SetActive(true);
+      rockNumber --;
+    }
+  }
+
+  void Update()
+  {
+    if (Input.GetButtonDown(m_ShootInput))
+    {
+      ThrowProjectile();
+    }
+  }
+}
