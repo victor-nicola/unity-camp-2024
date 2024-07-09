@@ -7,6 +7,7 @@ public class PlayerInteraction : MonoBehaviour
 	
 	private InteractableObject m_CurrentInteractableObject;
 	
+
 	void Update() 
 	{
 		InteractableObject interactableObject = null;
