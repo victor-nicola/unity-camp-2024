@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
   void Update()
   {
     m_Movement = new Vector3(Input.GetAxis(m_HorizontalAxis), 0, Input.GetAxis(m_VerticalAxis));
-    m_Movement = Quaternion.Euler(0, 45, 0) * m_Movement;
+    m_Movement = Quaternion.Euler(0, -90, 0) * m_Movement;
 
     if (m_Movement.magnitude > 1)
       m_Movement = m_Movement.normalized;
