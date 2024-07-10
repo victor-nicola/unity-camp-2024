@@ -122,6 +122,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &86420163 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2321353907949098052, guid: d47c4619a5bae46e88bbbd8d2f2ccf6c, type: 3}
+  m_PrefabInstance: {fileID: 111457948}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &111457948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -366,6 +371,7 @@ GameObject:
   - component: {fileID: 1342656849}
   - component: {fileID: 1342656848}
   - component: {fileID: 1342656851}
+  - component: {fileID: 1342656852}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -441,7 +447,7 @@ Transform:
   m_GameObject: {fileID: 1342656847}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40557975, y: -0.579228, z: 0.40557975, w: 0.579228}
-  m_LocalPosition: {x: 37.1, y: 56.1, z: 11.3}
+  m_LocalPosition: {x: 37, y: 56, z: 11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -491,6 +497,20 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1342656852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342656847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d523a5711009849d7a4b7ea62cb6ba8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToFollow: {fileID: 86420163}
+  offset: {x: 37, y: 56, z: 11}
 --- !u!1001 &2091944267
 PrefabInstance:
   m_ObjectHideFlags: 0
