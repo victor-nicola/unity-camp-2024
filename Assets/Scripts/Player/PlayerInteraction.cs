@@ -66,8 +66,8 @@ public class PlayerInteraction : MonoBehaviour
 		}
 	}
 
-  void OnDrawGizmos()
-  {
-    Gizmos.DrawCube(transform.position, m_BoxCastSize / 2);
-  }
+  // void OnDrawGizmos()
+  // {
+  //   Gizmos.DrawCube(transform.position, m_BoxCastSize / 2);
+  // }
 }
