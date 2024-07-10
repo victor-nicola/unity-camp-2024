@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2321353907949098052, guid: d47c4619a5bae46e88bbbd8d2f2ccf6c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3
+      value: 1.74
       objectReference: {fileID: 0}
     - target: {fileID: 2321353907949098052, guid: d47c4619a5bae46e88bbbd8d2f2ccf6c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -510,7 +510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToFollow: {fileID: 86420163}
-  offset: {x: 37, y: 56, z: 11}
+  offset: {x: 40, y: 55, z: 0}
 --- !u!1001 &2091944267
 PrefabInstance:
   m_ObjectHideFlags: 0
