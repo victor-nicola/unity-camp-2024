@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+namespace Izzzmana {
+
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody playerRigidbody;
@@ -45,4 +47,5 @@ public class PlayerMovement : MonoBehaviour
         playerRigidbody.AddRelativeForce(-strafe * runSpeed, 0, -moving * runSpeed);
         playerRigidbody.velocity = Vector3.ClampMagnitude(playerRigidbody.velocity, 2 * runSpeed);
     }
+}
 }
