@@ -48,6 +48,8 @@ MonoBehaviour:
   m_ShootInput: Fire_P1
   projectileSpeed: 10
   rockNumber: 0
+  laptopNumber: 0
+  bottleNumber: 0
 --- !u!1 &2828550857618296123
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,14 +351,7 @@ MonoBehaviour:
   m_VerticalAxis: Vertical_P1
   m_JumpAxis: Jump_P1
   m_MovementSpeed: 10
-  m_JumpSpeed: 400
   m_RotationSpeed: 360
-  m_BoxCastSize: {x: 1, y: 0.5, z: 1}
-  m_CastLength: 0.5
-  m_InteractionLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  m_RaycastOffset: {x: 0, y: 0.28, z: 0}
 --- !u!114 &4364990683662035214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,7 +382,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 70
   m_Drag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}

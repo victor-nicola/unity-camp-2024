@@ -27,6 +27,14 @@ public class PlayerInteraction : MonoBehaviour
     {
       hand.rockNumber ++;
     }
+    else if (interactedObject.tag == "Laptop")
+    {
+      hand.laptopNumber ++;
+    }
+    else if (interactedObject.tag == "Bottle")
+    {
+      hand.bottleNumber ++;
+    }
   }
 
 	void Update() 
