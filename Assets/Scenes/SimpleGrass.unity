@@ -170,6 +170,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4364990683662035214, guid: d47c4619a5bae46e88bbbd8d2f2ccf6c, type: 3}
+      propertyPath: warning
+      value: 
+      objectReference: {fileID: 1181676705}
     - target: {fileID: 5490415924933544563, guid: d47c4619a5bae46e88bbbd8d2f2ccf6c, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3727,8 +3731,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190282
-  m_fontColor: {r: 0.7924528, g: 0, b: 0, a: 1}
+    rgba: 202
+  m_fontColor: {r: 0.7924528, g: 0, b: 0, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3861,8 +3865,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190282
-  m_fontColor: {r: 0.7924528, g: 0, b: 0, a: 1}
+    rgba: 202
+  m_fontColor: {r: 0.7921569, g: 0, b: 0, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

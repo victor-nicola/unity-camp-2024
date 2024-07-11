@@ -14,6 +14,9 @@ public class PlayerInteraction : MonoBehaviour
   [Header("Object Refs")]
   [SerializeField] private HandScript hand;
 
+	[Header("Warning")]
+	[SerializeField] private Warning warning;
+
 	private InteractableObject m_CurrentInteractableObject;
 	private RaycastHit[] m_CastBuffer;
 	
@@ -78,6 +81,7 @@ public class PlayerInteraction : MonoBehaviour
 				m_CurrentInteractableObject.StopInteract();
 			else if (Input.GetButtonDown(m_InteractInput) && hand.isFull()) {
 				Debug.Log("Hand is full!");
+				warning.ShowWarning("Deja ai ceva in mana!");
 			}
 		}
 	}
