@@ -43,6 +43,10 @@ public class PlayerInteraction : MonoBehaviour
 			hand.equipItem((int)QuestTypes.laptop);
 			Debug.Log(hand.objInHand);
     }
+		else if (interactedObject.tag == "Cartela")
+		{
+			hand.hasCard = true;
+		}
   }
 
 	void Update() 
@@ -75,8 +79,25 @@ public class PlayerInteraction : MonoBehaviour
 		
 		if (m_CurrentInteractableObject != null)
 		{
-			if (Input.GetButtonDown(m_InteractInput) && !hand.isFull())
+			if (Input.GetButtonDown(m_InteractInput) && m_CurrentInteractableObject.tag == "Door")
+			{
+				if (hand.hasCard)
+					m_CurrentInteractableObject.StartInteract(this);
+				else
+					warning.ShowWarning("Ai nevoie de cartela!");
+			}
+			else if (Input.GetButtonDown(m_InteractInput) && m_CurrentInteractableObject.tag == "Cartela")
+			{
 				m_CurrentInteractableObject.StartInteract(this);
+			}
+			else if (Input.GetButtonDown(m_InteractInput) && m_CurrentInteractableObject.tag == "Rock")
+			{
+				m_CurrentInteractableObject.StartInteract(this);
+			}
+			else if (Input.GetButtonDown(m_InteractInput) && !hand.isFull())
+			{
+				m_CurrentInteractableObject.StartInteract(this);
+			}
 			else if (Input.GetButtonUp(m_InteractInput)) 
 				m_CurrentInteractableObject.StopInteract();
 			else if (Input.GetButtonDown(m_InteractInput) && hand.isFull()) {

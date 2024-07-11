@@ -12,6 +12,7 @@ public class HandScript : MonoBehaviour
   [HideInInspector] public int laptopNumber = 0;
   [HideInInspector] public int bottleNumber = 0;
   [HideInInspector] public int objInHand = -1;
+  [HideInInspector] public bool hasCard = false;
   
   public void ThrowProjectile() {
     if (rockNumber > 0)
