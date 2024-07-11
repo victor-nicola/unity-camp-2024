@@ -8,6 +8,9 @@ TagManager:
   - Floor
   - Laptop
   - Bottle
+  - Door
+  - Cartela
+  - Home
   layers:
   - Default
   - TransparentFX
