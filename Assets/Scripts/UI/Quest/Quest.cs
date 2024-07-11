@@ -11,8 +11,8 @@ using UnityEngine.UIElements;
 public class Quest : MonoBehaviour
 {
     [SerializeField] private GameObject textObj, check, ongoing;
-    public bool isDone = false;
-    public int questType, questNr;
+    [HideInInspector] public bool isDone = false;
+    [HideInInspector] public int questType, questNr;
     private string[,] questNames = {{"laptop","laptopuri"}, 
                         {"sticla", "sticle"}, 
                         {"cartela", "cartele"}, 

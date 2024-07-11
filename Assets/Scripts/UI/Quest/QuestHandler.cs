@@ -6,10 +6,10 @@ using Unity.VisualScripting;
 
 public enum QuestTypes 
 {
-    laptop,
-    sticla,
-    cartela,
-    sabie,
+    laptop = 0,
+    sticla = 1,
+    cartela = 2,
+    sabie = 3,
 }
 
 public class QuestHandler : MonoBehaviour

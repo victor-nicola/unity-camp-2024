@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6179643666834970964}
   m_Layer: 3
   m_Name: LaptopBase.020
-  m_TagString: Untagged
+  m_TagString: Laptop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

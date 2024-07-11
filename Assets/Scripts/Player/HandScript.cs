@@ -11,6 +11,7 @@ public class HandScript : MonoBehaviour
   [HideInInspector] public int rockNumber = 0;
   [HideInInspector] public int laptopNumber = 0;
   [HideInInspector] public int bottleNumber = 0;
+  [HideInInspector] public int objInHand = -1;
   
   public void ThrowProjectile() {
     if (rockNumber > 0)
@@ -29,5 +30,14 @@ public class HandScript : MonoBehaviour
     {
       ThrowProjectile();
     }
+  }
+
+  public void equipItem(int type) {
+    objInHand = type;
+    Debug.Log("equipped: " + type);
+  }
+
+  public bool isFull() {
+    return objInHand > -1;
   }
 }

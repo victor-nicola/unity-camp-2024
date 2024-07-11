@@ -23,17 +23,22 @@ public class PlayerInteraction : MonoBehaviour
 	}
 	
   public void ActOnObject(GameObject interactedObject) {
+		Debug.Log("acted for: " + interactedObject.tag);
     if (interactedObject.tag == "Rock")
     {
       hand.rockNumber ++;
     }
     else if (interactedObject.tag == "Laptop")
     {
-      hand.laptopNumber ++;
+      //hand.laptopNumber ++;
+			hand.equipItem((int)QuestTypes.laptop);
+			Debug.Log(hand.objInHand);
     }
     else if (interactedObject.tag == "Bottle")
     {
-      hand.bottleNumber ++;
+      //hand.bottleNumber ++;
+			hand.equipItem((int)QuestTypes.laptop);
+			Debug.Log(hand.objInHand);
     }
   }
 
@@ -67,10 +72,13 @@ public class PlayerInteraction : MonoBehaviour
 		
 		if (m_CurrentInteractableObject != null)
 		{
-			if (Input.GetButtonDown(m_InteractInput))
+			if (Input.GetButtonDown(m_InteractInput) && !hand.isFull())
 				m_CurrentInteractableObject.StartInteract(this);
 			else if (Input.GetButtonUp(m_InteractInput)) 
 				m_CurrentInteractableObject.StopInteract();
+			else if (Input.GetButtonDown(m_InteractInput) && hand.isFull()) {
+				Debug.Log("Hand is full!");
+			}
 		}
 	}
 
