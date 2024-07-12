@@ -8,6 +8,7 @@ public class HandScript : MonoBehaviour
   [SerializeField] private string m_ShootInput;
   [SerializeField] private float projectileSpeed;
   [SerializeField] private FollowTarget enemy;
+  [SerializeField] private QuestHandler questHandler;
 
   [HideInInspector] public int rockNumber = 0;
   [HideInInspector] public int laptopNumber = 0;
@@ -29,6 +30,12 @@ public class HandScript : MonoBehaviour
     }
   }
 
+  void Start() {
+    if (questHandler == null) {
+      Debug.Log("QuestHandler reference not set on hand!");
+    }
+  }
+
   void Update()
   {
     if (Input.GetButtonDown(m_ShootInput))
@@ -44,5 +51,16 @@ public class HandScript : MonoBehaviour
 
   public bool isFull() {
     return objInHand > -1;
+  }
+
+  public void emptyHand() {
+    questHandler.depositItem(objInHand);
+
+    objInHand = -1;
+  }
+
+  public void equipCard() {
+    hasCard = true;
+    questHandler.depositItem((int)QuestTypes.cartela);
   }
 }

@@ -15,8 +15,7 @@ public class Quest : MonoBehaviour
     [HideInInspector] public int questType, questNr;
     private string[,] questNames = {{"laptop","laptopuri"}, 
                         {"sticla", "sticle"}, 
-                        {"cartela", "cartele"}, 
-                        {"sabie", "sabii"}};
+                        {"cartela", "cartele"}};
 
     public float duration = 2f;    // The duration of the animation
     private float endX;       // The ending x position
