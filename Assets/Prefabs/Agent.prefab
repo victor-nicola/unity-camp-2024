@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7529940378567102809}
   - component: {fileID: 2014654333408022610}
   - component: {fileID: 4202313636601222646}
+  - component: {fileID: 6037234581333482755}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -146,3 +147,15 @@ MonoBehaviour:
   player1: {fileID: 0}
   player2: {fileID: 0}
   m_TargetToFollow: {fileID: 0}
+--- !u!114 &6037234581333482755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4896865721527208227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a26cd2380cf481ea59341cfa3916d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

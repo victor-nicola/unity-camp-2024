@@ -48,6 +48,7 @@ MonoBehaviour:
   m_ShootInput: Fire_P1
   projectileSpeed: 10
   enemy: {fileID: 0}
+  questHandler: {fileID: 0}
   rockNumber: 0
   laptopNumber: 0
   bottleNumber: 0
@@ -135,6 +136,7 @@ GameObject:
   - component: {fileID: 7892106203687310386}
   - component: {fileID: 4364990683662035214}
   - component: {fileID: 3850112482874837948}
+  - component: {fileID: 4787902055121798340}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -297,3 +299,15 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 80
   m_CollisionDetection: 1
+--- !u!114 &4787902055121798340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5490415924933544563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a26cd2380cf481ea59341cfa3916d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

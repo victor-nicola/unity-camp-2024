@@ -52,6 +52,7 @@ public class ProgressObject : InteractableObject
         Deselect();
 				Debug.Log($"{name} progress finished");
         Destroy(gameObject);
+        // play pick-up sound
 			}
 		}
 	}

@@ -1076,7 +1076,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Coop
+  m_text: Co-op
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 965624da310d4d5a59d9085b73560074, type: 2}
   m_sharedMaterial: {fileID: -7852982297306955210, guid: 965624da310d4d5a59d9085b73560074, type: 2}
@@ -1369,6 +1369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSingleplayer: 1
+  score: 0
 --- !u!4 &1892537699
 Transform:
   m_ObjectHideFlags: 0
