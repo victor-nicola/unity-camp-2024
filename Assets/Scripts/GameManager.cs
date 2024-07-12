@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject startUI;
     [SerializeField] private GameObject p1Joined, p2Joined;
 
+    private AudioSource gameTheme;
+
     void Awake()
     {
         if (Instance == null)
@@ -31,6 +33,7 @@ public class GameManager : MonoBehaviour
         }
 
         playerNr = 0;
+        gameTheme = gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -55,6 +58,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void unFreeze() {
+        gameTheme.Play();
         agent.GetComponent<FollowTarget>().unFreeze(agentSpeed);
         for(int i = 0; i < playerNr; i++) {
             players[i].GetComponent<Player>().unFreeze();
