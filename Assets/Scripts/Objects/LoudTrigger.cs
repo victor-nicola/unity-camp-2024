@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class LoudTrigger : MonoBehaviour
 {
+  [SerializeField] private AudioSource sound;
   [HideInInspector] public bool thrown;
   [HideInInspector] public FollowTarget enemy;
 
@@ -13,6 +14,7 @@ public class LoudTrigger : MonoBehaviour
     if (collider.gameObject.tag == "Floor" && thrown)
     {
       enemy.SetGoal(transform);
+      sound.Play();
     }
   }
 }

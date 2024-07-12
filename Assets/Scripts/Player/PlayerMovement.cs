@@ -15,9 +15,13 @@ public class PlayerMovement : MonoBehaviour
   // private bool m_JumpRequested;
   // private bool m_IsGrounded;
 
+  private AudioSource walkingSound;
+
   void Awake()
   {
     m_Rigidbody = GetComponent<Rigidbody>();
+    walkingSound = gameObject.GetComponent<AudioSource>();
+    m_Rigidbody = gameObject.GetComponent<Rigidbody>();
     // m_IsGrounded = false;
   }
 
@@ -28,7 +32,18 @@ public class PlayerMovement : MonoBehaviour
   //     m_JumpRequested = true;
   //   }
 
-    m_Movement = new Vector3(Input.GetAxis(m_HorizontalAxis), 0, Input.GetAxis(m_VerticalAxis));
+    float horizontal = Input.GetAxis(m_HorizontalAxis);
+    float vertical = Input.GetAxis(m_VerticalAxis);
+    m_Movement = new Vector3(horizontal, 0, vertical);
+
+    if ((horizontal != 0 || vertical != 0) && !walkingSound.isPlaying)
+    {
+      walkingSound.Play();
+    }
+    if (horizontal == 0 && vertical == 0)
+    {
+      walkingSound.Stop();
+    }
 
     if (m_Movement.magnitude > 1)
       m_Movement = m_Movement.normalized;

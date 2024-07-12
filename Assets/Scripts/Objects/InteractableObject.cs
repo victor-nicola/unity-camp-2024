@@ -3,6 +3,7 @@ using UnityEngine;
 public class InteractableObject : MonoBehaviour
 {
 	protected PlayerInteraction m_PlayerInteraction;
+  [SerializeField] protected AudioSource sound;
 	
 	public bool IsInteracting() 
 	{
@@ -34,7 +35,7 @@ public class InteractableObject : MonoBehaviour
 		}
 		m_PlayerInteraction = playerInteraction;
 		Debug.Log($"{playerInteraction} started interaction with object: {name}", this);
-    // play select sound
+    sound.Play();
 	}
 	
 	public virtual void StopInteract() 
@@ -44,5 +45,6 @@ public class InteractableObject : MonoBehaviour
 			Debug.Log($"{m_PlayerInteraction} stopped interaction with object: {name}", this);
 			m_PlayerInteraction = null;
 		}
+    sound.Stop();
 	}
 }
