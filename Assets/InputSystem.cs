@@ -53,6 +53,15 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Throw"",
+                    ""type"": ""Button"",
+                    ""id"": ""db44ec37-82bb-470a-afef-2f8bcd58b30d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -165,6 +174,28 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""StopInteract"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cb095bcc-e5e7-4838-82d7-ad5969505e1e"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouose"",
+                    ""action"": ""Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1534cac0-f04e-4055-adee-6b8819926e9c"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -204,6 +235,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         m_Default_Move = m_Default.FindAction("Move", throwIfNotFound: true);
         m_Default_StartInteract = m_Default.FindAction("StartInteract", throwIfNotFound: true);
         m_Default_StopInteract = m_Default.FindAction("StopInteract", throwIfNotFound: true);
+        m_Default_Throw = m_Default.FindAction("Throw", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -268,6 +300,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_Default_Move;
     private readonly InputAction m_Default_StartInteract;
     private readonly InputAction m_Default_StopInteract;
+    private readonly InputAction m_Default_Throw;
     public struct DefaultActions
     {
         private @InputSystem m_Wrapper;
@@ -275,6 +308,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Default_Move;
         public InputAction @StartInteract => m_Wrapper.m_Default_StartInteract;
         public InputAction @StopInteract => m_Wrapper.m_Default_StopInteract;
+        public InputAction @Throw => m_Wrapper.m_Default_Throw;
         public InputActionMap Get() { return m_Wrapper.m_Default; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -293,6 +327,9 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @StopInteract.started += instance.OnStopInteract;
             @StopInteract.performed += instance.OnStopInteract;
             @StopInteract.canceled += instance.OnStopInteract;
+            @Throw.started += instance.OnThrow;
+            @Throw.performed += instance.OnThrow;
+            @Throw.canceled += instance.OnThrow;
         }
 
         private void UnregisterCallbacks(IDefaultActions instance)
@@ -306,6 +343,9 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @StopInteract.started -= instance.OnStopInteract;
             @StopInteract.performed -= instance.OnStopInteract;
             @StopInteract.canceled -= instance.OnStopInteract;
+            @Throw.started -= instance.OnThrow;
+            @Throw.performed -= instance.OnThrow;
+            @Throw.canceled -= instance.OnThrow;
         }
 
         public void RemoveCallbacks(IDefaultActions instance)
@@ -346,5 +386,6 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnStartInteract(InputAction.CallbackContext context);
         void OnStopInteract(InputAction.CallbackContext context);
+        void OnThrow(InputAction.CallbackContext context);
     }
 }

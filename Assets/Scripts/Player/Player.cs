@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     {
         GameManager.Instance.players[GameManager.Instance.playerNr] = gameObject;
         playerID = GameManager.Instance.addPlayer();
+        gameObject.name = "Player" + playerID;
         Debug.Log("Player has id: " + playerID);
 
         transform.position = startPos + (playerID - 1) * playerDiff;
@@ -50,6 +51,16 @@ public class Player : MonoBehaviour
         handScript.questHandler = questHandler;
         // Initialize Cameras
         cameraHandler.initializeCamera();
+        // Initialize Agent
+        if (playerID == 1)
+        {
+            agent.GetComponent<FollowTarget>().player1 = transform;
+            agent.GetComponent<FollowTarget>().m_TargetToFollow = transform;
+        }
+        else
+        {
+            agent.GetComponent<FollowTarget>().player2 = transform;
+        }
 
         rb = gameObject.GetComponent<Rigidbody>();
         rbc = rb.constraints;

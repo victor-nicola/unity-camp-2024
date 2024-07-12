@@ -19121,15 +19121,15 @@ PrefabInstance:
     - target: {fileID: 4202313636601222646, guid: 940affef093aa41ab80ec39a141508a9, type: 3}
       propertyPath: player1
       value: 
-      objectReference: {fileID: 117230674}
+      objectReference: {fileID: 0}
     - target: {fileID: 4202313636601222646, guid: 940affef093aa41ab80ec39a141508a9, type: 3}
       propertyPath: player2
       value: 
-      objectReference: {fileID: 1222810088}
+      objectReference: {fileID: 0}
     - target: {fileID: 4202313636601222646, guid: 940affef093aa41ab80ec39a141508a9, type: 3}
       propertyPath: m_TargetToFollow
       value: 
-      objectReference: {fileID: 117230674}
+      objectReference: {fileID: 0}
     - target: {fileID: 4896865721527208227, guid: 940affef093aa41ab80ec39a141508a9, type: 3}
       propertyPath: m_Name
       value: Agent

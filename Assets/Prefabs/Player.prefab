@@ -340,27 +340,55 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 3355034a-5bdb-472e-8f46-050cb240f2fc
-    m_ActionName: Default/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Gamepad/leftStick,/Gamepad1/leftStick]
+    m_ActionName: Default/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Gamepad/leftStick]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 4364990683662035214}
+        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+        m_MethodName: OnStartInteract
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 6103f980-8fde-4abf-bd5e-a1dfabce1f2a
-    m_ActionName: Default/StartInteract[/Keyboard/e,/Gamepad/buttonSouth,/Gamepad1/buttonSouth]
+    m_ActionName: Default/StartInteract[/Keyboard/e,/Gamepad/buttonSouth]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4364990683662035214}
+        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+        m_MethodName: OnStopInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 08ccf594-e5eb-4855-8432-b9ffdedc8afe
-    m_ActionName: Default/StopInteract[/Keyboard/e,/Gamepad/buttonSouth,/Gamepad1/buttonSouth]
+    m_ActionName: Default/StopInteract[/Keyboard/e,/Gamepad/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3729476050739462970}
+        m_TargetAssemblyTypeName: HandScript, Assembly-CSharp
+        m_MethodName: throwAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: db44ec37-82bb-470a-afef-2f8bcd58b30d
+    m_ActionName: Default/Throw[/Keyboard/ctrl,/Gamepad/buttonWest]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Default

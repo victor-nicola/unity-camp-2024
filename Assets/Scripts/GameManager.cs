@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void unFreeze() {
-        agent.GetComponent<NavMeshAgent>().speed = agentSpeed;
+        agent.GetComponent<FollowTarget>().unFreeze(agentSpeed);
         for(int i = 0; i < playerNr; i++) {
             players[i].GetComponent<Player>().unFreeze();
         }

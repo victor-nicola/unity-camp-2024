@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.InputSystem.InputAction;
 
 public class HandScript : MonoBehaviour
 {
@@ -38,8 +39,14 @@ public class HandScript : MonoBehaviour
 
   void Update()
   {
-    if (Input.GetButtonDown(m_ShootInput))
-    {
+    // if (Input.GetButtonDown(m_ShootInput))
+    // {
+    //   ThrowProjectile();
+    // }
+  }
+
+  public void throwAction(CallbackContext context) {
+    if (context.phase == UnityEngine.InputSystem.InputActionPhase.Performed) {
       ThrowProjectile();
     }
   }

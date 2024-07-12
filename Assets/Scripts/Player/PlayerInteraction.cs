@@ -78,44 +78,43 @@ public class PlayerInteraction : MonoBehaviour
 				m_CurrentInteractableObject.Select();
 		}
 		
-		if (m_CurrentInteractableObject != null)
-		{
-			if (Input.GetButtonDown(m_InteractInput) && m_CurrentInteractableObject.tag == "Door")
-			{
-				if (hand.hasCard)
-					m_CurrentInteractableObject.StartInteract(this);
-				else
-					warning.ShowWarning("Ai nevoie de cartela!");
-			}
-			else if (Input.GetButtonDown(m_InteractInput) && m_CurrentInteractableObject.tag == "Cartela")
-			{
-				m_CurrentInteractableObject.StartInteract(this);
-			}
-			else if (Input.GetButtonDown(m_InteractInput) && m_CurrentInteractableObject.tag == "Rock")
-			{
-				m_CurrentInteractableObject.StartInteract(this);
-			}
-			else if (Input.GetButtonDown(m_InteractInput) && !hand.isFull())
-			{
-				m_CurrentInteractableObject.StartInteract(this);
-			}
-			else if (Input.GetButtonUp(m_InteractInput)) 
-				m_CurrentInteractableObject.StopInteract();
-			else if (Input.GetButtonDown(m_InteractInput) && hand.isFull()) {
-				Debug.Log("Hand is full!");
-				warning.ShowWarning("Deja ai ceva in mana!");
-			}
-		}
 	}
 	public void OnStartInteract(CallbackContext context) {
-		if (context.phase == UnityEngine.InputSystem.InputActionPhase.Performed) {
+		if (context.phase == UnityEngine.InputSystem.InputActionPhase.Performed && m_CurrentInteractableObject != null) {
+			Debug.Log("E pressed");
+			switch (m_CurrentInteractableObject.tag) 
+			{
+				case "Door":
+					if (hand.hasCard)
+						m_CurrentInteractableObject.StartInteract(this);
+					else
+						warning.ShowWarning("Ai nevoie de cartela!");
+					break;
 
+				case "Cartela":
+					m_CurrentInteractableObject.StartInteract(this);
+					break;
+
+				case "Rock":
+					m_CurrentInteractableObject.StartInteract(this);
+					break;
+
+				default:
+					if (!hand.isFull())
+						m_CurrentInteractableObject.StartInteract(this);
+					else 
+					{
+						Debug.Log("Hand is full!");
+						warning.ShowWarning("Deja ai ceva in mana!");
+					}
+					break;
+			}
 		}
 	}
 
 	public void OnStopInteract(CallbackContext context) {
-		if (context.phase == UnityEngine.InputSystem.InputActionPhase.Performed) {
-
+		if (context.phase == UnityEngine.InputSystem.InputActionPhase.Performed && m_CurrentInteractableObject != null) {
+			m_CurrentInteractableObject.StopInteract();
 		}
 	}
 
