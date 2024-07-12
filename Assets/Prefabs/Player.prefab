@@ -136,8 +136,6 @@ GameObject:
   - component: {fileID: 7892106203687310386}
   - component: {fileID: 4364990683662035214}
   - component: {fileID: 3850112482874837948}
-  - component: {fileID: 5398816367249592080}
-  - component: {fileID: 6361679637792107830}
   - component: {fileID: -5663281767425382074}
   - component: {fileID: 2501547278218879935}
   m_Layer: 0
@@ -274,7 +272,6 @@ MonoBehaviour:
     m_Bits: 8
   m_InteractInput: Interact
   hand: {fileID: 3729476050739462970}
-  pickupSound: {fileID: 6361679637792107830}
   warning: {fileID: 0}
 --- !u!54 &3850112482874837948
 Rigidbody:
