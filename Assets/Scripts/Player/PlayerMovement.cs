@@ -16,12 +16,11 @@ public class PlayerMovement : MonoBehaviour
   // private bool m_JumpRequested;
   // private bool m_IsGrounded;
 
-  private AudioSource walkingSound;
+  [SerializeField] private AudioSource walkingSound;
 
   void Awake()
   {
     m_Rigidbody = GetComponent<Rigidbody>();
-    walkingSound = gameObject.GetComponent<AudioSource>();
     m_Rigidbody = gameObject.GetComponent<Rigidbody>();
     // m_IsGrounded = false;
   }

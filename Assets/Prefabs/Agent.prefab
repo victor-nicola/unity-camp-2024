@@ -147,10 +147,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 0}
   player2: {fileID: 0}
-  walkingSound: {fileID: 0}
-  easterEggSound: {fileID: 0}
+  walkingSound: {fileID: 8823996665139970747}
+  easterEggSound: {fileID: 8608301032546157174}
   cooldown: 5
   m_TargetToFollow: {fileID: 0}
+  distDiffToChange: 20
 --- !u!82 &8823996665139970747
 AudioSource:
   m_ObjectHideFlags: 0
@@ -161,7 +162,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: dd14088e2aaaf4e08879a21080a518c7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
@@ -257,7 +258,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b3ff4d996bb014c868ee68d3eb003b31, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.75
   m_Pitch: 1
