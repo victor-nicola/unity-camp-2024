@@ -351,15 +351,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2321353907949098052, guid: d47c4619a5bae46e88bbbd8d2f2ccf6c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.54
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2321353907949098052, guid: d47c4619a5bae46e88bbbd8d2f2ccf6c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.85
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2321353907949098052, guid: d47c4619a5bae46e88bbbd8d2f2ccf6c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.11
+      value: 41.9
       objectReference: {fileID: 0}
     - target: {fileID: 2321353907949098052, guid: d47c4619a5bae46e88bbbd8d2f2ccf6c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -397,6 +397,10 @@ PrefabInstance:
       propertyPath: questHandler
       value: 
       objectReference: {fileID: 662867444}
+    - target: {fileID: 3850112482874837948, guid: d47c4619a5bae46e88bbbd8d2f2ccf6c, type: 3}
+      propertyPath: m_AngularDrag
+      value: 18.21
+      objectReference: {fileID: 0}
     - target: {fileID: 4364990683662035214, guid: d47c4619a5bae46e88bbbd8d2f2ccf6c, type: 3}
       propertyPath: hand
       value: 
