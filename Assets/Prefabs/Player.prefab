@@ -50,6 +50,8 @@ MonoBehaviour:
   rockNumber: 0
   laptopNumber: 0
   bottleNumber: 0
+  objInHand: -1
+  hasCard: 0
 --- !u!1 &2828550857618296123
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +241,7 @@ GameObject:
   - component: {fileID: 3850112482874837948}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -372,6 +374,7 @@ MonoBehaviour:
     m_Bits: 8
   m_InteractInput: Interact
   hand: {fileID: 3729476050739462970}
+  warning: {fileID: 0}
 --- !u!54 &3850112482874837948
 Rigidbody:
   m_ObjectHideFlags: 0

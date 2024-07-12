@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.UI;
 using Unity.VisualScripting;
+using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
 
 public enum QuestTypes 
 {
     laptop = 0,
     sticla = 1,
     cartela = 2,
-    sabie = 3,
 }
 
 public class QuestHandler : MonoBehaviour
@@ -21,14 +22,18 @@ public class QuestHandler : MonoBehaviour
     private int questsSize = 0;
     private int[,] typeInterval = {{1, 6}, // laptop
                                    {1, 6}, // sticla
-                                   {1, 1}, // cartela
-                                   {1, 3}}; // sabie
-    private int questTypeNr = 4;
-    public int[] itemCompletion = new int[4];
+                                   {1, 1}}; // cartela
+    private int questTypeNr = 3;
+    public int[] itemCompletion = new int[10];
+    [SerializeField] private TMP_Text scoreText;
+    [DoNotSerialize] public int score;
+    private int[] questPoints = {100, 200, 500};
 
     // Start is called before the first frame update
     void Start()
     {
+        score = 0;
+
         for (int t = 0; t < questTypeNr; t++) 
         {
             int nr = Random.Range(typeInterval[t, 0], typeInterval[t, 1]);
@@ -47,6 +52,7 @@ public class QuestHandler : MonoBehaviour
                 if (!quest.isDone && quest.questNr <= itemCompletion[t])
                 {
                     quest.completeQuest();
+                    updateScore();
                 }
             }
         }
@@ -58,5 +64,16 @@ public class QuestHandler : MonoBehaviour
         quests[questsSize] = Instantiate(questPrefab, parentTransform);
         quests[questsSize].GetComponent<Quest>().setQuest(type, nr);
         questsSize++;
+    }
+
+    private void updateScore() {
+        scoreText.text = "Score: " + score;
+    }
+
+    public void depositItem(int type) {
+        itemCompletion[type]++;
+        Debug.Log("items now at: " + itemCompletion[type]);
+        score += questPoints[type];
+        updateScore();
     }
 }

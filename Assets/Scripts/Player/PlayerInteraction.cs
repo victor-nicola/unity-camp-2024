@@ -45,7 +45,7 @@ public class PlayerInteraction : MonoBehaviour
     }
 		else if (interactedObject.tag == "Cartela")
 		{
-			hand.hasCard = true;
+			hand.equipCard();
 		}
   }
 
