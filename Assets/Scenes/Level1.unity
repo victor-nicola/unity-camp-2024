@@ -293,12 +293,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 62097845}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 62097845}
+  m_maskType: 0
 --- !u!23 &62097845
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19827,6 +19827,10 @@ PrefabInstance:
     - target: {fileID: 7323517868880989144, guid: 940affef093aa41ab80ec39a141508a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8608301032546157174, guid: 940affef093aa41ab80ec39a141508a9, type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8608301032546157174, guid: 940affef093aa41ab80ec39a141508a9, type: 3}
       propertyPath: m_audioClip

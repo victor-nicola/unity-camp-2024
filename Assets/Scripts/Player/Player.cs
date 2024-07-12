@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.InputSystem.InputAction;
 
 public class Player : MonoBehaviour
 {
@@ -64,6 +65,14 @@ public class Player : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
         rbc = rb.constraints;
         rb.constraints = RigidbodyConstraints.FreezePosition;
+    }
+
+    public void StartGame(CallbackContext context)
+    {
+      if (context.phase == UnityEngine.InputSystem.InputActionPhase.Performed)
+      {
+        GameManager.Instance.startGame();
+      }
     }
 
     // Update is called once per frame

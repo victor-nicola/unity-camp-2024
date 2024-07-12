@@ -34,9 +34,11 @@ public class Quest : MonoBehaviour
 
     public void setQuest(int type, int nr)
     {
+        QuestHandler questHandler = GameObject.Find("QuestHandler").GetComponent<QuestHandler>();
+        int no = questHandler.itemCompletion[type];
         questType = type;
         questNr = nr;
-        textObj.GetComponent<TMP_Text>().text = "Recupereaza " + nr + " " + questNames[type, nr > 1? 1 : 0];
+        textObj.GetComponent<TMP_Text>().text = "Recupereaza " + no + "/" + nr + " " + questNames[type, nr > 1? 1 : 0];
         rectTransform = GetComponent<RectTransform>();
         endX = transform.position.x + rectTransform.sizeDelta.x * type;
         StartCoroutine(LerpPosition());

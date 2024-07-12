@@ -62,6 +62,15 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""StartGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""9e6d0b1c-131b-4433-b269-1a69d74d76e5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -196,6 +205,28 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""Throw"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bd8f7838-df55-476f-98fa-727b1046e2e4"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""StartGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""15c1d145-938a-4709-9791-60de58fac453"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouose"",
+                    ""action"": ""StartGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -236,6 +267,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         m_Default_StartInteract = m_Default.FindAction("StartInteract", throwIfNotFound: true);
         m_Default_StopInteract = m_Default.FindAction("StopInteract", throwIfNotFound: true);
         m_Default_Throw = m_Default.FindAction("Throw", throwIfNotFound: true);
+        m_Default_StartGame = m_Default.FindAction("StartGame", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -301,6 +333,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_Default_StartInteract;
     private readonly InputAction m_Default_StopInteract;
     private readonly InputAction m_Default_Throw;
+    private readonly InputAction m_Default_StartGame;
     public struct DefaultActions
     {
         private @InputSystem m_Wrapper;
@@ -309,6 +342,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         public InputAction @StartInteract => m_Wrapper.m_Default_StartInteract;
         public InputAction @StopInteract => m_Wrapper.m_Default_StopInteract;
         public InputAction @Throw => m_Wrapper.m_Default_Throw;
+        public InputAction @StartGame => m_Wrapper.m_Default_StartGame;
         public InputActionMap Get() { return m_Wrapper.m_Default; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -330,6 +364,9 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @Throw.started += instance.OnThrow;
             @Throw.performed += instance.OnThrow;
             @Throw.canceled += instance.OnThrow;
+            @StartGame.started += instance.OnStartGame;
+            @StartGame.performed += instance.OnStartGame;
+            @StartGame.canceled += instance.OnStartGame;
         }
 
         private void UnregisterCallbacks(IDefaultActions instance)
@@ -346,6 +383,9 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @Throw.started -= instance.OnThrow;
             @Throw.performed -= instance.OnThrow;
             @Throw.canceled -= instance.OnThrow;
+            @StartGame.started -= instance.OnStartGame;
+            @StartGame.performed -= instance.OnStartGame;
+            @StartGame.canceled -= instance.OnStartGame;
         }
 
         public void RemoveCallbacks(IDefaultActions instance)
@@ -387,5 +427,6 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         void OnStartInteract(InputAction.CallbackContext context);
         void OnStopInteract(InputAction.CallbackContext context);
         void OnThrow(InputAction.CallbackContext context);
+        void OnStartGame(InputAction.CallbackContext context);
     }
 }

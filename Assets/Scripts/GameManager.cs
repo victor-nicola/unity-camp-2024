@@ -19,9 +19,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject p1Joined, p2Joined;
 
     private AudioSource gameTheme;
+    private bool gameStarted;
 
     void Awake()
     {
+        gameStarted = false;
         if (Instance == null)
         {
             Instance = this;
@@ -66,9 +68,13 @@ public class GameManager : MonoBehaviour
     }
 
     public void startGame() {
-        Debug.Log("Game started!");
-        unFreeze();
-        startUI.SetActive(false);
+        if (!gameStarted)
+        {
+            Debug.Log("Game started!");
+            unFreeze();
+            startUI.SetActive(false);
+            gameStarted = true;
+        }
     }
 
     public int addPlayer() {
