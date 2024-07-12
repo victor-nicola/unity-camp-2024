@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class PlayerInteraction : MonoBehaviour
   [SerializeField] public AudioSource pickupSound;
 
 	[Header("Warning")]
-	[SerializeField] private Warning warning;
+	public Warning warning;
 
 	private InteractableObject m_CurrentInteractableObject;
 	private RaycastHit[] m_CastBuffer;
@@ -105,6 +106,17 @@ public class PlayerInteraction : MonoBehaviour
 				Debug.Log("Hand is full!");
 				warning.ShowWarning("Deja ai ceva in mana!");
 			}
+		}
+	}
+	public void OnStartInteract(CallbackContext context) {
+		if (context.phase == UnityEngine.InputSystem.InputActionPhase.Performed) {
+
+		}
+	}
+
+	public void OnStopInteract(CallbackContext context) {
+		if (context.phase == UnityEngine.InputSystem.InputActionPhase.Performed) {
+
 		}
 	}
 

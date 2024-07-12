@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -27,23 +28,24 @@ public class PlayerMovement : MonoBehaviour
 
   void Update()
   {
-  //   if (Input.GetButtonDown(m_JumpAxis) && m_IsGrounded)
+   //  if (Input.GetButtonDown(m_JumpAxis) && m_IsGrounded)
   //   {
   //     m_JumpRequested = true;
   //   }
 
-    float horizontal = Input.GetAxis(m_HorizontalAxis);
-    float vertical = Input.GetAxis(m_VerticalAxis);
-    m_Movement = new Vector3(horizontal, 0, vertical);
+    // float horizontal = Input.GetAxis(m_HorizontalAxis);
+    // float vertical = Input.GetAxis(m_VerticalAxis);
+    // m_Movement = new Vector3(horizontal, 0, vertical);
 
-    if ((horizontal != 0 || vertical != 0) && !walkingSound.isPlaying)
-    {
-      walkingSound.Play();
-    }
-    if (horizontal == 0 && vertical == 0)
-    {
-      walkingSound.Stop();
-    }
+    // if ((horizontal != 0 || vertical != 0) && !walkingSound.isPlaying)
+    // {
+    //   walkingSound.Play();
+    // }
+    // if (horizontal == 0 && vertical == 0)
+    // {
+    //   walkingSound.Stop();
+    // }
+    //m_Movement = new Vector3(Input.GetAxis(m_HorizontalAxis), 0, Input.GetAxis(m_VerticalAxis));
 
     if (m_Movement.magnitude > 1)
       m_Movement = m_Movement.normalized;
@@ -59,6 +61,11 @@ public class PlayerMovement : MonoBehaviour
     //   m_JumpRequested = false;
     // }
      m_Rigidbody.velocity = new Vector3(m_Movement.x * m_MovementSpeed, m_Rigidbody.velocity.y, m_Movement.z * m_MovementSpeed);
+  }
+
+  public void OnMove(CallbackContext context) {
+      var move = context.ReadValue<Vector2>();
+      m_Movement = new Vector3(move.x, 0, move.y);
   }
 
   // void OnCollisionEnter(Collision collision)
