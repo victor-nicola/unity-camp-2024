@@ -76,6 +76,7 @@ public class QuestHandler : MonoBehaviour
         Debug.Log("items now at: " + itemCompletion[type]);
         score += questPoints[type];
         updateScore();
+        quests[type].GetComponent<Quest>().updateQuest();
     }
 
     public bool questsDone() {

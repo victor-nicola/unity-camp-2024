@@ -44,6 +44,12 @@ public class Quest : MonoBehaviour
         StartCoroutine(LerpPosition());
     }
 
+    public void updateQuest() {
+        QuestHandler questHandler = GameObject.Find("QuestHandler").GetComponent<QuestHandler>();
+        int no = questHandler.itemCompletion[questType];
+        textObj.GetComponent<TMP_Text>().text = "Recupereaza " + no + "/" + questNr + " " + questNames[questType, questNr > 1? 1 : 0];
+    }
+
     private IEnumerator LerpPosition()
     {
         Vector3 startPosition = rectTransform.anchoredPosition;
