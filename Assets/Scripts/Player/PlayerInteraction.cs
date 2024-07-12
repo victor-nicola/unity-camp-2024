@@ -42,7 +42,7 @@ public class PlayerInteraction : MonoBehaviour
     else if (interactedObject.tag == "Bottle")
     {
       //hand.bottleNumber ++;
-			hand.equipItem((int)QuestTypes.laptop);
+			hand.equipItem((int)QuestTypes.sticla);
 			Debug.Log(hand.objInHand);
     }
 		else if (interactedObject.tag == "Cartela")
