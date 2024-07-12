@@ -99,7 +99,7 @@ public class FollowTarget : MonoBehaviour
       }
       
       Debug.Log("dist" + Vector3.Distance(m_TargetToFollow.position, transform.position) );
-      if (m_TargetToFollow.gameObject.tag != "Rock" && Vector3.Distance(m_TargetToFollow.position, transform.position) <= 1.5f)
+      if (m_TargetToFollow.gameObject.tag != "Rock" && Vector3.Distance(m_TargetToFollow.position, transform.position) <= 2.5f)
       {
         GameManager.Instance.dieInGame();
       }
