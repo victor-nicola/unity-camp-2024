@@ -23,7 +23,7 @@ public class QuestHandler : MonoBehaviour
     private int[,] typeInterval = {{1, 6}, // laptop
                                    {1, 6}, // sticla
                                    {1, 1}}; // cartela
-    private int questTypeNr = 3;
+    private int questTypeNr = 3, questDoneNr;
     public int[] itemCompletion = new int[10];
     [SerializeField] private TMP_Text scoreText;
     [DoNotSerialize] public int score;
@@ -33,6 +33,7 @@ public class QuestHandler : MonoBehaviour
     void Start()
     {
         score = 0;
+        questDoneNr = 0;
 
         for (int t = 0; t < questTypeNr; t++) 
         {
@@ -53,6 +54,7 @@ public class QuestHandler : MonoBehaviour
                 {
                     quest.completeQuest();
                     updateScore();
+                    questDoneNr++;
                 }
             }
         }
@@ -75,5 +77,9 @@ public class QuestHandler : MonoBehaviour
         Debug.Log("items now at: " + itemCompletion[type]);
         score += questPoints[type];
         updateScore();
+    }
+
+    public bool questsDone() {
+        return questDoneNr == questTypeNr;
     }
 }

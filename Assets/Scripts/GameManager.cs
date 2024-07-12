@@ -49,12 +49,12 @@ public class GameManager : MonoBehaviour
 
     public void finishGame() {
         Debug.Log("Finished game!");
-        SceneManager.LoadScene("FinishScreen");
+        SceneManager.LoadScene("victoryscreen");
     }
 
     public void dieInGame() {
         Debug.Log("You died!");
-        SceneManager.LoadScene("DeathScreen");
+        SceneManager.LoadScene("LoseMenu");
     }
 
     public void unFreeze() {

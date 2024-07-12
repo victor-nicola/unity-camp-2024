@@ -12,9 +12,12 @@ public class PlayerMovement : MonoBehaviour
 	// [SerializeField] private LayerMask m_InteractionLayer;
 
   private Rigidbody m_Rigidbody;
+  [SerializeField] private Animator m_Animator;
   private Vector3 m_Movement;
   // private bool m_JumpRequested;
   // private bool m_IsGrounded;
+
+  private bool m_IsWalking;
 
   [SerializeField] private AudioSource walkingSound;
 
@@ -48,6 +51,15 @@ public class PlayerMovement : MonoBehaviour
 
     if (m_Movement.magnitude > 1)
       m_Movement = m_Movement.normalized;
+
+    bool newiswalking = !Mathf.Approximately(m_Movement.magnitude, 0);
+    if (newiswalking && !m_IsWalking) {
+      m_IsWalking = true;
+      m_Animator.SetBool("iswalking", true);
+    } else if (!newiswalking && m_IsWalking) {
+      m_IsWalking = false;
+      m_Animator.SetBool("iswalking", false);
+    }
 
     if (!Mathf.Approximately(m_Movement.magnitude, 0))
       transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(m_Movement), m_RotationSpeed * Time.deltaTime);

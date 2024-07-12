@@ -11,5 +11,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 148f273cea8397945a107441469e2608
+  - enabled: 1
+    path: Assets/Scenes/victoryscreen.unity
+    guid: d78c4577cf454d840bf4e39ff26d5deb
+  - enabled: 1
+    path: Assets/Scenes/LoseMenu.unity
+    guid: 762584fa8e6cfad42a3ed6ccdbfe9b0d
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 3fad0a9ed14d844b0b131d93370bda23, type: 2}

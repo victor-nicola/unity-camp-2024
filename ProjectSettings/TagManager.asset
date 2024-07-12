@@ -11,6 +11,7 @@ TagManager:
   - Door
   - Cartela
   - Home
+  - bed
   layers:
   - Default
   - TransparentFX

@@ -49,6 +49,10 @@ public class PlayerInteraction : MonoBehaviour
 		{
 			hand.equipCard();
 		}
+		else if (interactedObject.tag == "bed")
+		{
+			GameManager.Instance.finishGame();
+		}
   }
 
 	void Update() 
@@ -98,6 +102,13 @@ public class PlayerInteraction : MonoBehaviour
 
 				case "Rock":
 					m_CurrentInteractableObject.StartInteract(this);
+					break;
+
+				case "bed":
+					if (GameObject.Find("QuestHandler").GetComponent<QuestHandler>().questsDone())
+						m_CurrentInteractableObject.StartInteract(this);
+					else
+						warning.ShowWarning("Trebuie sa termini toate quest-urile");
 					break;
 
 				default:

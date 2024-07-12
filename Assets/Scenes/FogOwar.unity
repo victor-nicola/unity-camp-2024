@@ -5552,6 +5552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce25b3e303ddf4bcd8d22c92119a2fad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: {fileID: 0}
 --- !u!4 &1991867170 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2321353907949098052, guid: d47c4619a5bae46e88bbbd8d2f2ccf6c, type: 3}

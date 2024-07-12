@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
         agent = GameObject.Find("Agent");
         cameraP = GameObject.Find("Camera" + playerID);
 
-        uiP = GameObject.Find("Player" + playerID);
+        uiP = GameObject.Find("UIPlayer" + playerID);
         warningP = uiP.GetComponent<Warning>();
 
         // Camera Follow
