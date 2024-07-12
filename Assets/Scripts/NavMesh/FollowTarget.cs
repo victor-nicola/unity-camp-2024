@@ -21,6 +21,9 @@ public class FollowTarget : MonoBehaviour
     {
       SetGoal(player2);
     }
+
+    // At the start the game is frozen
+    GetComponent<NavMeshAgent>().speed = 0;
   }
 
   public void SetGoal(Transform goal)

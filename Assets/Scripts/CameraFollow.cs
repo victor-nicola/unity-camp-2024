@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-  [SerializeField] private Transform objectToFollow;
+  public Transform objectToFollow;
   [SerializeField] private Vector3 offset;
 
   void Start()

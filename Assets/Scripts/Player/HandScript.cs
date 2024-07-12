@@ -7,8 +7,8 @@ public class HandScript : MonoBehaviour
   [SerializeField] private GameObject projectile;
   [SerializeField] private string m_ShootInput;
   [SerializeField] private float projectileSpeed;
-  [SerializeField] private FollowTarget enemy;
-  [SerializeField] private QuestHandler questHandler;
+  public FollowTarget enemy;
+  public QuestHandler questHandler;
 
   [HideInInspector] public int rockNumber = 0;
   [HideInInspector] public int laptopNumber = 0;
