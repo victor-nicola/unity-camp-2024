@@ -93,9 +93,15 @@ public class FollowTarget : MonoBehaviour
       {
         m_TargetToFollow = player1;
       }
-      if (Vector3.Distance(m_TargetToFollow.position, transform.position) - Vector3.Distance(player2.position, transform.position) > distDiffToChange)
+      if (player2 != null && Vector3.Distance(m_TargetToFollow.position, transform.position) - Vector3.Distance(player2.position, transform.position) > distDiffToChange)
       {
         m_TargetToFollow = player2;
+      }
+      
+      Debug.Log("dist" + Vector3.Distance(m_TargetToFollow.position, transform.position) );
+      if (m_TargetToFollow.gameObject.tag != "Rock" && Vector3.Distance(m_TargetToFollow.position, transform.position) <= 1.5f)
+      {
+        GameManager.Instance.dieInGame();
       }
     }
   }
