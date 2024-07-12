@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class LoudTrigger : MonoBehaviour
 {
-  void Start()
+  [HideInInspector] public bool thrown;
+  [HideInInspector] public FollowTarget enemy;
+
+  private void OnCollisionEnter(Collision collider)
   {
-      
-  }
-
-  private void OnCollisionEnter(Collision collider) {
-
+    if (collider.gameObject.tag == "Floor" && thrown)
+    {
+      enemy.SetGoal(transform);
+    }
   }
 }

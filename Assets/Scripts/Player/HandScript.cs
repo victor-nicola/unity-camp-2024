@@ -7,6 +7,7 @@ public class HandScript : MonoBehaviour
   [SerializeField] private GameObject projectile;
   [SerializeField] private string m_ShootInput;
   [SerializeField] private float projectileSpeed;
+  [SerializeField] private FollowTarget enemy;
 
   [HideInInspector] public int rockNumber = 0;
   [HideInInspector] public int laptopNumber = 0;
@@ -19,7 +20,10 @@ public class HandScript : MonoBehaviour
     {
       GameObject m_projectile = Instantiate(projectile, transform.position, transform.rotation);
       Vector3 projectileVelocity = new Vector3(0, 0, projectileSpeed);
-      m_projectile.GetComponent<Rigidbody>().velocity = transform.rotation * projectileVelocity;
+      m_projectile.GetComponent<Rigidbody>().velocity = projectileVelocity;
+      LoudTrigger trigger = m_projectile.GetComponent<LoudTrigger>();
+      trigger.thrown = true;
+      trigger.enemy = enemy;
       m_projectile.SetActive(true);
       rockNumber --;
     }

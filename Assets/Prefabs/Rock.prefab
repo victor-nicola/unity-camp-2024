@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 1099886744595284186}
   - component: {fileID: 9135699442061690555}
   - component: {fileID: 3333358233415055685}
+  - component: {fileID: -5859307183960747967}
+  - component: {fileID: 5694702861487347782}
   m_Layer: 3
   m_Name: Rock
   m_TagString: Rock
@@ -149,6 +151,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Duration: 1
   m_ProgressBar: {fileID: 8106470752937482708}
+--- !u!208 &-5859307183960747967
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4442568879707954288}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.28, y: 0.358, z: 0.19500001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.020000001, y: -0.003, z: 0.16800001}
+  m_TimeToStationary: 0.5
+--- !u!114 &5694702861487347782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4442568879707954288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c663dc8bf34f4416fb196ad864059c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrown: 0
+  enemy: {fileID: 0}
 --- !u!1001 &7450139825209268526
 PrefabInstance:
   m_ObjectHideFlags: 0
