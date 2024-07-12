@@ -1,5 +1,6 @@
 using System.Threading;
 using Unity.Burst.Intrinsics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -26,22 +27,24 @@ public class FollowTarget : MonoBehaviour
 
   public void unFreeze(float speed) {
     m_NavAgent = GetComponent<NavMeshAgent>();
-    float distanceP1 = Vector3.Distance(player1.position, transform.position);
-    float distanceP2 = Vector3.Distance(player2.position, transform.position);
-    if (distanceP1 <= distanceP2)
+    if (player2 != null)
     {
-      SetGoal(player1);
+      float distanceP1 = Vector3.Distance(player1.position, transform.position);
+      float distanceP2 = Vector3.Distance(player2.position, transform.position);
+      if (distanceP1 <= distanceP2)
+      {
+        SetGoal(player1);
+      }
+      else
+      {
+        SetGoal(player2);
+      }
     }
     else
-    {
-      SetGoal(player2);
-    }
+      SetGoal(player1);
     GetComponent<NavMeshAgent>().speed = speed;
     gameFroze = false;
     timer = 0;
-
-    // At the start the game is frozen
-    GetComponent<NavMeshAgent>().speed = 0;
   }
 
   public void SetGoal(Transform goal)
@@ -56,29 +59,30 @@ public class FollowTarget : MonoBehaviour
   void Update()
   {
     
-    bool isWalking = !Mathf.Approximately(m_NavAgent.velocity.magnitude, 0);
-
-    timer += Time.deltaTime;
-    if (isWalking && !walkingSound.isPlaying) {
-      walkingSound.Play();
-    } else if (!isWalking && walkingSound.isPlaying) {
-      walkingSound.Stop();
-    }
-
-    if (timer >= cooldown)
-    {
-      easterEggSound.Play();
-      timer = 0;
-    }
-
     if (!gameFroze)
     {
+      bool isWalking = !Mathf.Approximately(m_NavAgent.velocity.magnitude, 0);
+      
+      timer += Time.deltaTime;
+      if (isWalking && !walkingSound.isPlaying) {
+        walkingSound.Play();
+      } else if (!isWalking && walkingSound.isPlaying) {
+        walkingSound.Stop();
+      }
+
+      if (timer >= cooldown)
+      {
+        easterEggSound.Play();
+        timer = 0;
+      }
+
+
+      // Debug.Log("p1 dist: " + Vector3.Distance(player1.position, transform.position));
+      // Debug.Log("p2 dist: " + Vector3.Distance(player2.position, transform.position));
       Debug.Log("following: " + m_TargetToFollow.gameObject.name);
       SetGoal(m_TargetToFollow);
       if (Vector3.Distance(m_TargetToFollow.position, transform.position) <= 1f)
       {
-        Debug.Log("p1 dist: " + Vector3.Distance(m_TargetToFollow.position, transform.position));
-        Debug.Log("p2 dist: " + Vector3.Distance(player2.position, transform.position));
         m_TargetToFollow = player1;
         if (player2 != null && player2.gameObject.activeSelf && Vector3.Distance(m_TargetToFollow.position, transform.position) > Vector3.Distance(player2.position, transform.position))
         {

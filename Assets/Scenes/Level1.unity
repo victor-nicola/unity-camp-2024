@@ -1380,6 +1380,16 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4896865721527208227, guid: 940affef093aa41ab80ec39a141508a9, type: 3}
   m_PrefabInstance: {fileID: 8252967448219421835}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &535855627 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8608301032546157174, guid: 940affef093aa41ab80ec39a141508a9, type: 3}
+  m_PrefabInstance: {fileID: 8252967448219421835}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &535855628 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8823996665139970747, guid: 940affef093aa41ab80ec39a141508a9, type: 3}
+  m_PrefabInstance: {fileID: 8252967448219421835}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &585643488
 GameObject:
   m_ObjectHideFlags: 0
@@ -2794,6 +2804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33419b4a6aa9d45209fc56bc6bc9e19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: {fileID: 0}
   m_Duration: 2
   m_ProgressBar: {fileID: 929131240}
 --- !u!114 &867002797
@@ -5190,6 +5201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33419b4a6aa9d45209fc56bc6bc9e19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: {fileID: 0}
   m_Duration: 3
   m_ProgressBar: {fileID: 262392087}
 --- !u!23 &1766002968
@@ -19127,6 +19139,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4202313636601222646, guid: 940affef093aa41ab80ec39a141508a9, type: 3}
+      propertyPath: walkingSound
+      value: 
+      objectReference: {fileID: 535855628}
+    - target: {fileID: 4202313636601222646, guid: 940affef093aa41ab80ec39a141508a9, type: 3}
+      propertyPath: easterEggSound
+      value: 
+      objectReference: {fileID: 535855627}
+    - target: {fileID: 4202313636601222646, guid: 940affef093aa41ab80ec39a141508a9, type: 3}
       propertyPath: m_TargetToFollow
       value: 
       objectReference: {fileID: 0}
@@ -19174,6 +19194,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8608301032546157174, guid: 940affef093aa41ab80ec39a141508a9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b3ff4d996bb014c868ee68d3eb003b31, type: 3}
+    - target: {fileID: 8823996665139970747, guid: 940affef093aa41ab80ec39a141508a9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: dd14088e2aaaf4e08879a21080a518c7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
