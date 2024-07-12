@@ -34,6 +34,7 @@ public class InteractableObject : MonoBehaviour
 		}
 		m_PlayerInteraction = playerInteraction;
 		Debug.Log($"{playerInteraction} started interaction with object: {name}", this);
+    // play select sound
 	}
 	
 	public virtual void StopInteract() 
