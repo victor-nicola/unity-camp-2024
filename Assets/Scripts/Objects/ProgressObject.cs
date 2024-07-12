@@ -46,14 +46,20 @@ public class ProgressObject : InteractableObject
 			
 			if (m_Timer >= m_Duration)
 			{
+        // play pick-up sound pe playerinteraction
+        sound.Stop();
+        m_PlayerInteraction.pickupSound.Play();
         m_PlayerInteraction.ActOnObject(gameObject);
 				m_IsProgressFinished = true;
         m_ProgressBar.gameObject.SetActive(false);
         Deselect();
 				Debug.Log($"{name} progress finished");
         Destroy(gameObject);
-        // play pick-up sound
 			}
+      else if (!sound.isPlaying)
+      {
+        sound.Play();
+      }
 		}
 	}
 }

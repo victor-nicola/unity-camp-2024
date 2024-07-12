@@ -14,6 +14,7 @@ public class PlayerInteraction : MonoBehaviour
 	
   [Header("Object Refs")]
   [SerializeField] private HandScript hand;
+  [SerializeField] public AudioSource pickupSound;
 
 	[Header("Warning")]
 	public Warning warning;

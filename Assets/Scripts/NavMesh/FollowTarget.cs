@@ -1,9 +1,14 @@
+using System.Threading;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class FollowTarget : MonoBehaviour
 {
   public Transform player1, player2;
+  [SerializeField] private AudioSource walkingSound;
+  [SerializeField] private AudioSource easterEggSound;
+  [SerializeField] private float cooldown;
   public Transform m_TargetToFollow;
 
   [SerializeField] private float distDiffToChange = 20f;
@@ -11,6 +16,7 @@ public class FollowTarget : MonoBehaviour
   private NavMeshAgent m_NavAgent;
   private bool gameFroze;
 
+  private float timer;
   void Awake()
   {
     // At the start the game is frozen
@@ -32,6 +38,10 @@ public class FollowTarget : MonoBehaviour
     }
     GetComponent<NavMeshAgent>().speed = speed;
     gameFroze = false;
+    timer = 0;
+
+    // At the start the game is frozen
+    GetComponent<NavMeshAgent>().speed = 0;
   }
 
   public void SetGoal(Transform goal)
@@ -45,6 +55,22 @@ public class FollowTarget : MonoBehaviour
 
   void Update()
   {
+    
+    bool isWalking = !Mathf.Approximately(m_NavAgent.velocity.magnitude, 0);
+
+    timer += Time.deltaTime;
+    if (isWalking && !walkingSound.isPlaying) {
+      walkingSound.Play();
+    } else if (!isWalking && walkingSound.isPlaying) {
+      walkingSound.Stop();
+    }
+
+    if (timer >= cooldown)
+    {
+      easterEggSound.Play();
+      timer = 0;
+    }
+
     if (!gameFroze)
     {
       Debug.Log("following: " + m_TargetToFollow.gameObject.name);
